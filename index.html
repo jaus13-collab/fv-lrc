@@ -13,13 +13,23 @@ input[type=number]{width:100%;padding:7px 10px;background:#fffdf5;border:1.5px s
 input[type=number]:focus{border-color:#c8a050;box-shadow:0 0 0 3px rgba(200,160,80,.15)}
 input[type=number]::-webkit-inner-spin-button{opacity:.4}
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f0e8d0}::-webkit-scrollbar-thumb{background:#c8b090;border-radius:3px}
-#header{background:#2d2416;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #c8a050}
+
+/* HEADER */
+#header{background:#2d2416;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #c8a050}
 #header .title{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#f5e6c0}
 #header .sub{font-family:'DM Mono',monospace;font-size:10px;color:#c8a050;letter-spacing:.2em;text-transform:uppercase;margin-bottom:4px}
 #header .right{text-align:right;font-family:'DM Mono',monospace;font-size:10px;color:#a09070}
+
+/* LAYOUT DESKTOP */
 #layout{display:flex;height:calc(100vh - 67px)}
 #sidebar{width:290px;background:#fff9ed;border-right:1.5px solid #e8d9b5;padding:20px 18px;overflow-y:auto;flex-shrink:0}
 #main{flex:1;padding:20px 24px;overflow-y:auto}
+
+/* SIDEBAR TOGGLE (mobile only) */
+#sidebar-toggle{display:none;width:100%;padding:12px 16px;background:#fff9ed;border:none;border-bottom:1.5px solid #e8d9b5;text-align:left;font-family:'DM Mono',monospace;font-size:12px;font-weight:700;color:#2d2416;cursor:pointer;letter-spacing:.05em}
+#sidebar-toggle .arrow{float:right;transition:transform .25s}
+#sidebar-toggle.open .arrow{transform:rotate(180deg)}
+
 .sec-title{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c8a050;font-family:'DM Mono',monospace;padding-bottom:6px;border-bottom:1px solid #e8d9b5;margin:14px 0 10px}
 .field{margin-bottom:14px}
 .field label{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7a6c5d;margin-bottom:4px}
@@ -28,62 +38,101 @@ input[type=number]::-webkit-inner-spin-button{opacity:.4}
 .field .unit{font-size:11px;color:#9a8770;white-space:nowrap;font-family:'DM Mono',monospace}
 #btn-reset{width:100%;margin-top:12px;padding:10px;background:#2d2416;border:none;border-radius:7px;color:#f5e6c0;font-family:'DM Mono',monospace;font-size:11px;font-weight:700;cursor:pointer;letter-spacing:.06em}
 #btn-reset:hover{background:#3d3426}
-#banner{background:linear-gradient(135deg,#1a6635,#2d8a4e);border-radius:10px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:center;gap:16px;color:#fff}
-#banner .icon{font-size:28px}
-#banner .label{font-size:11px;opacity:.8;letter-spacing:.08em;text-transform:uppercase;font-family:'DM Mono',monospace;margin-bottom:2px}
-#banner .msg{font-size:16px;font-weight:700;font-family:'Playfair Display',serif}
+
+/* BANNER */
+#banner{background:linear-gradient(135deg,#1a6635,#2d8a4e);border-radius:10px;padding:14px 20px;margin-bottom:16px;display:flex;align-items:center;gap:16px;color:#fff}
+#banner .icon{font-size:26px;flex-shrink:0}
+#banner .label{font-size:10px;opacity:.8;letter-spacing:.08em;text-transform:uppercase;font-family:'DM Mono',monospace;margin-bottom:2px}
+#banner .msg{font-size:15px;font-weight:700;font-family:'Playfair Display',serif;line-height:1.3}
 #banner .highlight{color:#a8f0c0}
-#tabs{display:flex;gap:4px;margin-bottom:18px;background:#f0e8d0;border-radius:8px;padding:4px}
-.tab{padding:8px 18px;border-radius:6px;border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:transparent;color:#7a6c5d;transition:all .15s}
+
+/* TABS */
+#tabs{display:flex;gap:4px;margin-bottom:16px;background:#f0e8d0;border-radius:8px;padding:4px;overflow-x:auto}
+.tab{padding:8px 14px;border-radius:6px;border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:transparent;color:#7a6c5d;transition:all .15s;white-space:nowrap;flex-shrink:0}
 .tab.active{background:#2d2416;color:#f5e6c0}
 .panel{display:none}.panel.active{display:block}
-.kpi-grid{display:grid;gap:12px;margin-bottom:12px}
+
+/* KPI GRIDS */
+.kpi-grid{display:grid;gap:10px;margin-bottom:10px}
 .kpi-grid-2{grid-template-columns:1fr 1fr}
 .kpi-grid-3{grid-template-columns:1fr 1fr 1fr}
-.kpi-card{background:#fff;border-radius:10px;border:1.5px solid #e8d9b5;padding:16px 18px}
-.kpi-card .kpi-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a6c5d;margin-bottom:10px}
+.kpi-card{background:#fff;border-radius:10px;border:1.5px solid #e8d9b5;padding:14px 16px}
+.kpi-card .kpi-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a6c5d;margin-bottom:8px}
 .kpi-sides{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .kpi-side{text-align:center;padding:10px 6px;border-radius:8px;background:#f9f5ee;border:1.5px solid #e8d9b5}
 .kpi-side.winner{background:#e8f7ee;border-color:#2d8a4e}
 .kpi-side .kpi-name{font-size:10px;color:#7a6c5d;margin-bottom:4px;font-weight:600}
-.kpi-side .kpi-val{font-size:15px;font-weight:800;font-family:'DM Mono',monospace;color:#2d2416}
+.kpi-side .kpi-val{font-size:14px;font-weight:800;font-family:'DM Mono',monospace;color:#2d2416}
 .kpi-side.winner .kpi-val{color:#1a6635}
 .kpi-side .kpi-badge{font-size:9px;color:#2d8a4e;font-weight:700;margin-top:3px}
-.energy-box{background:#fff;border-radius:10px;border:1.5px solid #e8d9b5;padding:16px 18px;margin-bottom:12px}
-.energy-box .energy-title{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7a6c5d;margin-bottom:12px}
-.energy-cells{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.energy-cell{text-align:center;padding:12px 8px;background:#f9f5ee;border-radius:8px}
-.energy-cell .ec-label{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a8770;margin-bottom:6px}
-.energy-cell .ec-val{font-size:17px;font-weight:800;font-family:'DM Mono',monospace}
-.energy-cell .ec-unit{font-size:10px;color:#9a8770}
-.warn-box{background:#fffbee;border:1.5px solid #e8c840;border-radius:10px;padding:12px 16px}
+
+/* ENERGY */
+.energy-box{background:#fff;border-radius:10px;border:1.5px solid #e8d9b5;padding:14px 16px;margin-bottom:10px}
+.energy-box .energy-title{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7a6c5d;margin-bottom:10px}
+.energy-cells{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.energy-cell{text-align:center;padding:10px 6px;background:#f9f5ee;border-radius:8px}
+.energy-cell .ec-label{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9a8770;margin-bottom:5px}
+.energy-cell .ec-val{font-size:15px;font-weight:800;font-family:'DM Mono',monospace}
+.energy-cell .ec-unit{font-size:9px;color:#9a8770}
+
+/* WARN */
+.warn-box{background:#fffbee;border:1.5px solid #e8c840;border-radius:10px;padding:12px 14px}
 .warn-box .warn-title{font-size:11px;font-weight:700;color:#6b5700;margin-bottom:8px;letter-spacing:.05em;text-transform:uppercase}
 .warn-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px;color:#5a4a00}
-.chart-card{background:#fff;border-radius:10px;border:1.5px solid #e8d9b5;padding:18px;margin-bottom:16px}
-.chart-card .chart-title{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7a6c5d;margin-bottom:14px}
-.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* CHARTS */
+.chart-card{background:#fff;border-radius:10px;border:1.5px solid #e8d9b5;padding:16px;margin-bottom:14px}
+.chart-card .chart-title{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7a6c5d;margin-bottom:12px}
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+canvas{max-height:260px}
+
+/* TABLES */
 .table-card{background:#fff;border-radius:10px;border:1.5px solid #e8d9b5;overflow:hidden}
-.table-card .table-header{padding:14px 18px;border-bottom:1px solid #e8d9b5;font-size:13px;font-weight:700;font-family:'Playfair Display',serif}
+.table-card .table-header{padding:12px 16px;border-bottom:1px solid #e8d9b5;font-size:13px;font-weight:700;font-family:'Playfair Display',serif}
 .tbl-wrap{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:11px;font-family:'DM Mono',monospace}
 th{padding:8px 10px;text-align:right;font-weight:700;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#7a6c5d;border-bottom:1.5px solid #e8d9b5;white-space:nowrap;background:#f5efe0}
 td{padding:6px 10px;text-align:right;border-bottom:1px solid #f0e8d0}
 td.left{text-align:left;font-weight:800}
-tr.even{background:#faf7f0}
-tr.odd{background:#fff}
-tr.recover{background:#e8f7ee}
-tr.recover td.left{color:#1a6635}
-tfoot tr{background:#f5efe0;border-top:2px solid #e8d9b5}
-tfoot td{font-weight:700;font-size:11px}
+tr.even{background:#faf7f0}tr.odd{background:#fff}
+tr.recover{background:#e8f7ee}tr.recover td.left{color:#1a6635}
+tfoot tr{background:#f5efe0;border-top:2px solid #e8d9b5}tfoot td{font-weight:700;font-size:11px}
 .green{color:#2d8a4e}.red{color:#c04040}.bold{font-weight:800}
-canvas{max-height:260px}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  #header{padding:12px 16px}
+  #header .title{font-size:16px}
+  #header .right{display:none}
+
+  #layout{flex-direction:column;height:auto}
+
+  #sidebar-toggle{display:block}
+  #sidebar{width:100%;border-right:none;border-bottom:1.5px solid #e8d9b5;padding:0;overflow:hidden;max-height:0;transition:max-height .3s ease,padding .3s ease}
+  #sidebar.open{max-height:2000px;padding:16px}
+  #sidebar .sidebar-inner{display:block}
+
+  #main{padding:14px 14px}
+
+  #banner{padding:12px 14px;gap:10px}
+  #banner .icon{font-size:22px}
+  #banner .msg{font-size:13px}
+
+  .kpi-grid-2{grid-template-columns:1fr}
+  .kpi-grid-3{grid-template-columns:1fr}
+  .energy-cells{grid-template-columns:1fr 1fr}
+  .warn-grid{grid-template-columns:1fr}
+  .chart-grid{grid-template-columns:1fr}
+
+  .tab{padding:7px 10px;font-size:11px}
+}
 </style>
 </head>
 <body>
 <div id="header">
   <div>
     <div class="sub">La Rosaleda Cohousing S.Coop.</div>
-    <div class="title">☀ Comparativa Fotovoltaica</div>
+    <div class="title">☀ Comparativa Fotovoltaica &mdash; <span style="font-weight:400;opacity:.75">JoseAlonso para LRC</span></div>
   </div>
   <div class="right">
     <div>Planta propia vs. Iberdrola</div>
@@ -91,9 +140,11 @@ canvas{max-height:260px}
   </div>
 </div>
 
+<button id="sidebar-toggle">⚙ Datos de entrada <span class="arrow">▼</span></button>
+
 <div id="layout">
   <div id="sidebar">
-    <div style="margin-bottom:18px">
+    <div style="margin-bottom:16px">
       <div style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#c8a050;font-family:'DM Mono',monospace;font-weight:700;margin-bottom:4px">Bloque A</div>
       <div style="font-size:14px;font-weight:700;font-family:'Playfair Display',serif">Datos de Entrada</div>
       <div style="font-size:11px;color:#9a8770;margin-top:3px">Modifica cualquier valor y los resultados se actualizan al instante.</div>
@@ -111,7 +162,7 @@ canvas{max-height:260px}
     <div class="field"><label>Incremento anual excedentes</label><div class="row"><input type="number" id="incExc" value="0.02" step="0.005"><span class="unit">decimal</span></div></div>
 
     <div class="sec-title">Escenario 1 – Planta propia</div>
-    <div class="field"><label>Inversión inicial</label><div class="note">⚠ Actualizar con presupuesto real</div><div class="row"><input type="number" id="inversion" value="78750" step="500"><span class="unit">€</span></div></div>
+    <div class="field"><label>Inversión inicial</label><div class="note">⚠ Actualizar con presupuesto real</div><div class="row"><input type="number" id="inversion" value="60500" step="500"><span class="unit">€</span></div></div>
     <div class="field"><label>Coste O&amp;M anual</label><div class="note">~1% inversión: revisión, limpieza, seguro</div><div class="row"><input type="number" id="om" value="790" step="50"><span class="unit">€/año</span></div></div>
 
     <div class="sec-title">Escenario 2 – Iberdrola</div>
@@ -182,8 +233,8 @@ canvas{max-height:260px}
     <div class="panel" id="panel-tabla1">
       <div class="table-card">
         <div class="table-header">Escenario 1 – Planta en Propiedad · año a año</div>
-        <div class="tbl-wrap"><table id="tbl1">
-          <thead><tr><th style="text-align:left">Año</th><th>O&amp;M / Inversión (€)</th><th>Coste import. (€)</th><th>Ing. excedentes (€)</th><th>Coste neto (€)</th><th>Acum. coste (€)</th><th>Ref. sin planta (€)</th><th>Ahorro acum. (€)</th></tr></thead>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th style="text-align:left">Año</th><th>O&amp;M / Inv. (€)</th><th>Coste imp. (€)</th><th>Ing. exc. (€)</th><th>Coste neto (€)</th><th>Acum. (€)</th><th>Sin planta (€)</th><th>Ahorro acum. (€)</th></tr></thead>
           <tbody id="tbl1-body"></tbody>
           <tfoot><tr><td colspan="4" style="text-align:left;padding:8px 10px">TOTAL</td><td id="tbl1-tot-nom" style="padding:8px 10px"></td><td colspan="3" id="tbl1-tot-van" style="padding:8px 10px;text-align:right;font-size:10px;color:#7a6c5d"></td></tr></tfoot>
         </table></div>
@@ -194,8 +245,8 @@ canvas{max-height:260px}
     <div class="panel" id="panel-tabla2">
       <div class="table-card">
         <div class="table-header">Escenario 2 – Modelo Iberdrola · año a año</div>
-        <div class="tbl-wrap"><table id="tbl2">
-          <thead><tr><th style="text-align:left">Año</th><th>Alquiler tejado (€)</th><th>Coste energía (€)</th><th>Otros costes (€)</th><th>Coste neto (€)</th><th>Flujo VAN (€)</th><th>Acum. coste (€)</th></tr></thead>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th style="text-align:left">Año</th><th>Alquiler (€)</th><th>Coste energía (€)</th><th>Otros (€)</th><th>Coste neto (€)</th><th>VAN (€)</th><th>Acum. (€)</th></tr></thead>
           <tbody id="tbl2-body"></tbody>
           <tfoot><tr><td colspan="4" style="text-align:left;padding:8px 10px">TOTAL</td><td id="tbl2-tot-nom" class="red" style="padding:8px 10px"></td><td colspan="2" id="tbl2-tot-van" style="padding:8px 10px;text-align:right;font-size:10px;color:#7a6c5d"></td></tr></tfoot>
         </table></div>
@@ -205,69 +256,46 @@ canvas{max-height:260px}
 </div>
 
 <script>
-const DEFAULTS = {vida:25,consumo:95200,precioRed:0.18,incEnergia:0.03,produccionFV:116250,pctAutoconsumo:0.40,tasaVAN:0.04,precioExc:0.07,incExc:0.02,inversion:78750,om:790,alquiler:4000,tarifaIBE:0.14,otrosCostes:200};
-
-const ids = Object.keys(DEFAULTS);
+const DEFAULTS={vida:25,consumo:95200,precioRed:0.18,incEnergia:0.03,produccionFV:116250,pctAutoconsumo:0.40,tasaVAN:0.04,precioExc:0.07,incExc:0.02,inversion:60500,om:790,alquiler:4000,tarifaIBE:0.14,otrosCostes:200};
+const ids=Object.keys(DEFAULTS);
 function getParams(){const p={};ids.forEach(k=>{const el=document.getElementById(k);p[k]=el?parseFloat(el.value)||0:DEFAULTS[k]});return p;}
 function setParams(p){ids.forEach(k=>{const el=document.getElementById(k);if(el)el.value=p[k]});}
-
-const eur = (n,d=0)=>n==null?'—':n.toLocaleString('es-ES',{minimumFractionDigits:d,maximumFractionDigits:d})+' €';
-const num = (n)=>n==null?'—':n.toLocaleString('es-ES',{minimumFractionDigits:0,maximumFractionDigits:0});
+const eur=(n,d=0)=>n==null?'—':n.toLocaleString('es-ES',{minimumFractionDigits:d,maximumFractionDigits:d})+' €';
+const num=(n)=>n==null?'—':n.toLocaleString('es-ES',{minimumFractionDigits:0,maximumFractionDigits:0});
 
 function calc(p){
   const rows1=[],rows2=[];
-  let acum1=0,acumRef=0,acum2=0;
-  let recuperacion=null;
-  const auto=p.produccionFV*p.pctAutoconsumo;
-  const exc=p.produccionFV*(1-p.pctAutoconsumo);
-  const imp=p.consumo-auto;
+  let acum1=0,acumRef=0,acum2=0,recuperacion=null;
+  const auto=p.produccionFV*p.pctAutoconsumo,exc=p.produccionFV*(1-p.pctAutoconsumo),imp=p.consumo-auto;
   const ref0=p.consumo*p.precioRed;
-  acum1+=p.inversion; acumRef+=ref0;
+  acum1+=p.inversion;acumRef+=ref0;
   rows1.push({ano:0,om_inv:p.inversion,costeImp:0,ingExc:0,costeNeto:p.inversion,flujo:p.inversion,acum:acum1,ref:ref0,ahorro:acumRef-acum1});
   rows2.push({ano:0,alquiler:0,costeE:0,otros:0,costeNeto:0,flujo:0,acum:0});
   for(let a=1;a<=p.vida;a++){
-    const fac=(1+p.tasaVAN)**a;
-    const pE=p.precioRed*(1+p.incEnergia)**a;
-    const pX=p.precioExc*(1+p.incExc)**a;
-    const cImp=imp*pE;
-    const iExc=exc*pX;
-    const cn1=p.om+cImp-iExc;
-    acum1+=cn1;
-    const refA=p.consumo*pE;
-    acumRef+=refA;
-    const aho=acumRef-acum1;
+    const fac=(1+p.tasaVAN)**a,pE=p.precioRed*(1+p.incEnergia)**a,pX=p.precioExc*(1+p.incExc)**a;
+    const cImp=imp*pE,iExc=exc*pX,cn1=p.om+cImp-iExc;
+    acum1+=cn1;const refA=p.consumo*pE;acumRef+=refA;const aho=acumRef-acum1;
     if(recuperacion===null&&aho>=0)recuperacion=a;
     rows1.push({ano:a,om_inv:p.om,costeImp:cImp,ingExc:iExc,costeNeto:cn1,flujo:cn1/fac,acum:acum1,ref:refA,ahorro:aho});
-    const alqA=p.alquiler*(1+p.incEnergia)**a;
-    const cE2=p.consumo*p.tarifaIBE*(1+p.incEnergia)**a;
-    const cn2=cE2+p.otrosCostes-alqA;
-    acum2+=cn2;
-    rows2.push({ano:a,alquiler:alqA,costeE:cE2,otros:p.otrosCostes,costeNeto:cn2,flujo:cn2/fac,acum:acum2});
+    const alqA=p.alquiler*(1+p.incEnergia)**a,cE2=p.consumo*p.tarifaIBE*(1+p.incEnergia)**a,cn2=cE2+p.otrosCostes-alqA;
+    acum2+=cn2;rows2.push({ano:a,alquiler:alqA,costeE:cE2,otros:p.otrosCostes,costeNeto:cn2,flujo:cn2/fac,acum:acum2});
   }
-  const totNom1=rows1.reduce((s,r)=>s+r.costeNeto,0);
-  const totNom2=rows2.reduce((s,r)=>s+r.costeNeto,0);
-  const totVAN1=rows1.reduce((s,r)=>s+r.flujo,0);
-  const totVAN2=rows2.reduce((s,r)=>s+r.flujo,0);
+  const totNom1=rows1.reduce((s,r)=>s+r.costeNeto,0),totNom2=rows2.reduce((s,r)=>s+r.costeNeto,0);
+  const totVAN1=rows1.reduce((s,r)=>s+r.flujo,0),totVAN2=rows2.reduce((s,r)=>s+r.flujo,0);
   return{rows1,rows2,totNom1,totNom2,totVAN1,totVAN2,recuperacion,auto,exc,imp};
 }
 
 let chartAcum=null,chartAnual=null,chartAhorro=null;
-function destroyCharts(){[chartAcum,chartAnual,chartAhorro].forEach(c=>{if(c)c.destroy()});}
+function destroyCharts(){[chartAcum,chartAnual,chartAhorro].forEach(c=>{if(c)c.destroy();});}
 
 function render(){
   const p=getParams();
-  const {rows1,rows2,totNom1,totNom2,totVAN1,totVAN2,recuperacion,auto,exc,imp}=calc(p);
+  const{rows1,rows2,totNom1,totNom2,totVAN1,totVAN2,recuperacion,auto,exc,imp}=calc(p);
   const ahorro=totNom2-totNom1;
-
-  // Header
   document.getElementById('hdr-years').textContent='Modelo financiero · '+p.vida+' años';
-
-  // Banner
   document.getElementById('b-ahorro').textContent=eur(ahorro);
   document.getElementById('b-anos').textContent=p.vida;
   document.getElementById('b-rec').textContent=recuperacion!=null?recuperacion:'>'+p.vida;
-
-  // KPIs
   document.querySelector('#kpi-nom-e1 .kpi-val').textContent=eur(totNom1);
   document.querySelector('#kpi-nom-e2 .kpi-val').textContent=eur(totNom2);
   document.querySelector('#kpi-van-e1 .kpi-val').textContent=eur(totVAN1);
@@ -275,69 +303,41 @@ function render(){
   document.querySelector('#kpi-inv-e1 .kpi-val').textContent=eur(p.inversion);
   document.querySelector('#kpi-rec-e1 .kpi-val').textContent=recuperacion!=null?'Año '+recuperacion:'>'+p.vida;
   document.querySelector('#kpi-aho-e1 .kpi-val').textContent=eur(ahorro);
-
-  // Energy
   document.getElementById('ec-consumo').textContent=num(p.consumo);
   document.getElementById('ec-auto').textContent=num(auto);
   document.getElementById('ec-exc').textContent=num(exc);
   document.getElementById('ec-imp').textContent=num(Math.max(0,imp));
 
-  // Tabla 1
-  const tb1=document.getElementById('tbl1-body');
-  tb1.innerHTML='';
-  rows1.forEach(r=>{
-    const tr=document.createElement('tr');
-    const cls=r.ano===recuperacion?'recover':r.ano%2===0?'even':'odd';
-    tr.className=cls;
-    tr.innerHTML=`<td class="left">${r.ano===0?'0 (inst.)':r.ano}${r.ano===recuperacion?' ⬅':''}</td><td>${eur(r.om_inv)}</td><td>${eur(r.costeImp)}</td><td class="green">${eur(r.ingExc)}</td><td class="bold">${eur(r.costeNeto)}</td><td>${eur(r.acum)}</td><td>${eur(r.ref)}</td><td class="${r.ahorro>=0?'green':'red'} bold">${eur(r.ahorro)}</td>`;
-    tb1.appendChild(tr);
-  });
+  const tb1=document.getElementById('tbl1-body');tb1.innerHTML='';
+  rows1.forEach(r=>{const tr=document.createElement('tr');tr.className=r.ano===recuperacion?'recover':r.ano%2===0?'even':'odd';tr.innerHTML=`<td class="left">${r.ano===0?'0 (inst.)':r.ano}${r.ano===recuperacion?' ⬅':''}</td><td>${eur(r.om_inv)}</td><td>${eur(r.costeImp)}</td><td class="green">${eur(r.ingExc)}</td><td class="bold">${eur(r.costeNeto)}</td><td>${eur(r.acum)}</td><td>${eur(r.ref)}</td><td class="${r.ahorro>=0?'green':'red'} bold">${eur(r.ahorro)}</td>`;tb1.appendChild(tr);});
   document.getElementById('tbl1-tot-nom').textContent=eur(totNom1);
   document.getElementById('tbl1-tot-van').textContent='VAN: '+eur(totVAN1);
 
-  // Tabla 2
-  const tb2=document.getElementById('tbl2-body');
-  tb2.innerHTML='';
-  rows2.forEach(r=>{
-    const tr=document.createElement('tr');
-    tr.className=r.ano%2===0?'even':'odd';
-    tr.innerHTML=`<td class="left">${r.ano}</td><td class="green">${eur(r.alquiler)}</td><td>${eur(r.costeE)}</td><td>${eur(r.otros)}</td><td class="red bold">${eur(r.costeNeto)}</td><td>${eur(r.flujo)}</td><td>${eur(r.acum)}</td>`;
-    tb2.appendChild(tr);
-  });
+  const tb2=document.getElementById('tbl2-body');tb2.innerHTML='';
+  rows2.forEach(r=>{const tr=document.createElement('tr');tr.className=r.ano%2===0?'even':'odd';tr.innerHTML=`<td class="left">${r.ano}</td><td class="green">${eur(r.alquiler)}</td><td>${eur(r.costeE)}</td><td>${eur(r.otros)}</td><td class="red bold">${eur(r.costeNeto)}</td><td>${eur(r.flujo)}</td><td>${eur(r.acum)}</td>`;tb2.appendChild(tr);});
   document.getElementById('tbl2-tot-nom').textContent=eur(totNom2);
   document.getElementById('tbl2-tot-van').textContent='VAN: '+eur(totVAN2);
 
-  // Charts
   destroyCharts();
   const anos=rows1.slice(1).map(r=>r.ano);
-  const acum1=rows1.slice(1).map(r=>Math.round(r.acum));
-  const acum2=rows2.slice(1).map(r=>Math.round(r.acum));
-  const anual1=rows1.slice(1).map(r=>Math.round(r.costeNeto));
-  const anual2=rows2.slice(1).map(r=>Math.round(r.costeNeto));
+  const acum1d=rows1.slice(1).map(r=>Math.round(r.acum)),acum2d=rows2.slice(1).map(r=>Math.round(r.acum));
+  const anual1=rows1.slice(1).map(r=>Math.round(r.costeNeto)),anual2=rows2.slice(1).map(r=>Math.round(r.costeNeto));
   const ahorros=rows1.slice(1).map(r=>Math.round(r.ahorro));
-
   const barAnos=anos.filter((_,i)=>i%5===0||i===anos.length-1);
-  const barA1=anual1.filter((_,i)=>i%5===0||i===anos.length-1);
-  const barA2=anual2.filter((_,i)=>i%5===0||i===anos.length-1);
-
-  const grid={color:'#f0e8d0'};
-  const tickFont={size:10,family:'DM Mono'};
-  const eurTick=(v)=>(v/1000).toFixed(0)+'k €';
-
-  chartAcum=new Chart(document.getElementById('chart-acum'),{type:'line',data:{labels:anos,datasets:[
-    {label:'E1 Coste acum.',data:acum1,borderColor:'#c8a050',borderWidth:2.5,pointRadius:0,tension:.3},
-    {label:'E2 Coste acum.',data:acum2,borderColor:'#d05050',borderWidth:2.5,pointRadius:0,tension:.3}
-  ]},options:{responsive:true,plugins:{legend:{labels:{font:tickFont}},annotation:{}},scales:{x:{grid,ticks:{font:tickFont},title:{display:true,text:'Año',font:tickFont}},y:{grid,ticks:{font:tickFont,callback:eurTick}}}}});
-
-  chartAnual=new Chart(document.getElementById('chart-anual'),{type:'bar',data:{labels:barAnos,datasets:[
-    {label:'E1 Coste anual',data:barA1,backgroundColor:'#c8a050',borderRadius:3},
-    {label:'E2 Coste anual',data:barA2,backgroundColor:'#d05050',borderRadius:3}
-  ]},options:{responsive:true,plugins:{legend:{labels:{font:tickFont}}},scales:{x:{grid,ticks:{font:tickFont}},y:{grid,ticks:{font:tickFont,callback:(v)=>(v/1000).toFixed(0)+'k'}}}}});
-
-  chartAhorro=new Chart(document.getElementById('chart-ahorro'),{type:'line',data:{labels:anos,datasets:[
-    {label:'Ahorro acum.',data:ahorros,borderColor:'#2d8a4e',borderWidth:2.5,pointRadius:0,fill:true,backgroundColor:'rgba(45,138,78,.08)',tension:.3}
-  ]},options:{responsive:true,plugins:{legend:{labels:{font:tickFont}}},scales:{x:{grid,ticks:{font:tickFont}},y:{grid,ticks:{font:tickFont,callback:eurTick}}}}});
+  const barA1=anual1.filter((_,i)=>i%5===0||i===anos.length-1),barA2=anual2.filter((_,i)=>i%5===0||i===anos.length-1);
+  const grid={color:'#f0e8d0'},tf={size:10,family:'DM Mono'},eurTick=v=>(v/1000).toFixed(0)+'k €';
+  chartAcum=new Chart(document.getElementById('chart-acum'),{type:'line',data:{labels:anos,datasets:[{label:'E1 Coste acum.',data:acum1d,borderColor:'#c8a050',borderWidth:2.5,pointRadius:0,tension:.3},{label:'E2 Coste acum.',data:acum2d,borderColor:'#d05050',borderWidth:2.5,pointRadius:0,tension:.3}]},options:{responsive:true,plugins:{legend:{labels:{font:tf}}},scales:{x:{grid,ticks:{font:tf},title:{display:true,text:'Año',font:tf}},y:{grid,ticks:{font:tf,callback:eurTick}}}}});
+  chartAnual=new Chart(document.getElementById('chart-anual'),{type:'bar',data:{labels:barAnos,datasets:[{label:'E1 Coste anual',data:barA1,backgroundColor:'#c8a050',borderRadius:3},{label:'E2 Coste anual',data:barA2,backgroundColor:'#d05050',borderRadius:3}]},options:{responsive:true,plugins:{legend:{labels:{font:tf}}},scales:{x:{grid,ticks:{font:tf}},y:{grid,ticks:{font:tf,callback:v=>(v/1000).toFixed(0)+'k'}}}}});
+  chartAhorro=new Chart(document.getElementById('chart-ahorro'),{type:'line',data:{labels:anos,datasets:[{label:'Ahorro acum.',data:ahorros,borderColor:'#2d8a4e',borderWidth:2.5,pointRadius:0,fill:true,backgroundColor:'rgba(45,138,78,.08)',tension:.3}]},options:{responsive:true,plugins:{legend:{labels:{font:tf}}},scales:{x:{grid,ticks:{font:tf}},y:{grid,ticks:{font:tf,callback:eurTick}}}}});
 }
+
+// Sidebar toggle (mobile)
+const toggle=document.getElementById('sidebar-toggle');
+const sidebar=document.getElementById('sidebar');
+toggle.addEventListener('click',()=>{
+  sidebar.classList.toggle('open');
+  toggle.classList.toggle('open');
+});
 
 // Tabs
 document.querySelectorAll('.tab').forEach(btn=>{
@@ -346,17 +346,12 @@ document.querySelectorAll('.tab').forEach(btn=>{
     document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('panel-'+btn.dataset.tab).classList.add('active');
-    if(btn.dataset.tab==='graficos'){setTimeout(render,50);}
+    if(btn.dataset.tab==='graficos')setTimeout(render,50);
   });
 });
 
-// Inputs
 document.querySelectorAll('input[type=number]').forEach(el=>el.addEventListener('input',render));
-
-// Reset
 document.getElementById('btn-reset').addEventListener('click',()=>{setParams(DEFAULTS);render();});
-
-// Init
 render();
 </script>
 </body>
